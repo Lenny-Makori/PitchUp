@@ -13,8 +13,8 @@
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="{{url_for('main.pitch',category='general')}}">General</a></li>
-                <li><a href="{{url_for('main.pitch',category='pickuplines')}}">pickuplines</a></li>
-                <li><a href="{{url_for('main.pitch',category='productpitch')}}">productpitch</a></li>
+                <li><a href="{{url_for('main.pitch',category='pickuplines')}}">Pickup Lines</a></li>
+                <li><a href="{{url_for('main.pitch',category='productpitch')}}">Product Pitch</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
