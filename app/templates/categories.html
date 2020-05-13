@@ -8,10 +8,10 @@
 <!-- Content block -->
 {% block content %}
 <div class="container">
-    <h1 style="text-align: center;">  {{ category.upper() }} </h1>
+    <h2 style="text-align: center;">  {{ category.upper() }} </h2>
     <div class="row">
         <div class="col-md-4">
-            <h2>{{ category.title() }} Pitches</h2>
+            <!-- <h3>{{ category.upper() }} Pitches</h3>     -->
             {{macro.displaycategory(pitches)}}
         </div>
         <div class="col-md-4">
