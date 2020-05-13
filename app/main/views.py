@@ -37,30 +37,30 @@ def profile(uname):
 
 
 
-# @main.route('/pitch/<category>')
-# def pitch(category):
+@main.route('/pitch/<category>')
+def pitch(category):
 
     
    
-#     all_pitches=Pitch.query.filter_by(category=category).all()
-#     pitch=Pitch.query.filter_by(category=category).first()
+    all_pitches=Pitch.query.filter_by(category=category).all()
+    pitch=Pitch.query.filter_by(category=category).first()
 
-#     pitches=Pitch.get_pitch_category(category)
-#     form=CommentInput()
+    pitches=Pitch.get_pitch_category(category)
+    form=CommentInput()
     
-#     if form.validate_on_submit():
-#         description=form.description.data
+    if form.validate_on_submit():
+        description=form.description.data
         
-#         new_comment=Comment(description=description,upvote=0,downvote=0,pitch_id=pitchess.id)
-#         # SAVE COMENT
-#         new_comment.save_new_comment()
-#         return redirect(url_for('.pitch',category=pitches.category))
+        new_comment=Comment(description=description,upvote=0,downvote=0,pitch_id=pitchess.id)
+        # SAVE COMENT
+        new_comment.save_new_comment()
+        return redirect(url_for('.pitch',category=pitches.category))
 
-#         # return redirect(url_for('.movie',id = movie.id ))
-#     #
-#     pitches=Pitch.get_pitch_category(category)
+        # return redirect(url_for('.movie',id = movie.id ))
+    #
+    pitches=Pitch.get_pitch_category(category)
 
-#     return render_template('categories.html',category = category,all_pitches=all_pitches,form=form)
+    return render_template('categories.html',category = category,all_pitches=all_pitches,form=form)
 
 
 @main.route('/user/pitch/<id>', methods = ['GET','POST'])
