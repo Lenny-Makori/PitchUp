@@ -63,21 +63,21 @@ def profile(uname):
 #     return render_template('categories.html',category = category,all_pitches=all_pitches,form=form)
 
 
-# @main.route('/user/pitch/<id>', methods = ['GET','POST'])
-# @login_required
-# def new_pitch(id):  
-#     pitch_form=AddPitch()
-#     user=User.get_user(id)
-#     if form.validate_on_submit():
-#         title=pitch_form.title.data
-#         category=pitch_form.category.data
-#         description=pitch_form.description.data
-#         new_pitch=Pitch(title=title,category=category,description=description,user_id=user.id)
+@main.route('/user/pitch/<id>', methods = ['GET','POST'])
+@login_required
+def new_pitch(id):  
+    pitch_form=AddPitch()
+    user=User.get_user(id)
+    if form.validate_on_submit():
+        title=pitch_form.title.data
+        category=pitch_form.category.data
+        description=pitch_form.description.data
+        new_pitch=Pitch(title=title,category=category,description=description,user_id=user.id)
 
-#         new_pitch.save_pitch()
-#         return redirect(url_for('.index',id=user.id))
-#     title='New Pitch'
-#     return render_template('pitches.html',title = title, pitch_form=pitch_form,user=user)
+        new_pitch.save_pitch()
+        return redirect(url_for('.index',id=user.id))
+    title='New Pitch'
+    return render_template('pitches.html',title = title, pitch_form=pitch_form,user=user)
 
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
