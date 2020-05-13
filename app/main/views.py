@@ -21,19 +21,19 @@ def index():
     return render_template('index.html',title=title,message=message)
 
 
-# @main.route('/user/<uname>')
-# def profile(uname):
+@main.route('/user/<uname>')
+def profile(uname):
     
 
-#     user = User.query.filter_by(username = uname).first()
-#     user_id=user.id
-#     pitches=Pitch.get_pitch(user_id)
+    user = User.query.filter_by(username = uname).first()
+    user_id=user.id
+    pitches=Pitch.get_pitch(user_id)
     
     
-#     if user is None:
-#         abort(404)
+    if user is None:
+        abort(404)
 
-#     return render_template("profile/profile.html", user = user,pitches=pitches)
+    return render_template("profile/profile.html", user = user,pitches=pitches)
 
 
 
