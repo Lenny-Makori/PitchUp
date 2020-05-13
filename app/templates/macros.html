@@ -1,0 +1,56 @@
+{% macro displaypitches(pitch_list) %}
+
+{% for pitch in pitch_list %}
+
+<div class="col-md-4">
+    <div class="card border-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">{{ pitch.title}}</div>
+        <div class="card-body text-info">
+    
+            <p class="card-text">{{ pitch.description | truncate(30) }}</p>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{%endmacro%}
+
+{% macro displaycategory(pitch_list) %}
+
+{% for pitch in pitch_list %}
+
+
+<div class="card border-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{ pitch.category.title()}}</div>
+    <div class="card-body text-dark">
+
+        <p class="card-text">{{ pitch.description | truncate(30) }}</p>
+    </div>
+</div>
+{% endfor %}
+
+{%endmacro%}
+
+{% macro displayprofilepitch(pitch_list) %}
+
+{% for pitch in pitch_list %}
+
+<ul>
+    <li>pitch.title</li>
+</ul>
+{% endfor %}
+{%endmacro%}
+
+
+{% macro displaycategories(pitchlist) %}
+
+{% for pitch in pitchlist %}
+
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
+    <h2> {{ pitch.title}} </h2>
+    <p> {{ pitch.description | truncate(30) }}</p>
+
+</div>
+{% endfor %}
+{%endmacro%}

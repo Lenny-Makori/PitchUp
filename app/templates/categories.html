@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<!-- Content block -->
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center;">  {{ category.upper() }} </h1>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>{{ category.title() }} Pitches</h2>
+            {{macro.displaycategory(pitches)}}
+        </div>
+        <div class="col-md-4">
+            <P style="width: 30px;">{{wtf.quick_form(form)}}</P>
+        </div>
+    
+    </div>
+        <div class=""></div>  
+</div>
+
+
+{% endblock %}

@@ -5,6 +5,8 @@ class Config:
     '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://lenny:28tarantula@localhost/pitchhub'
+
     
     UPLOADED_PHOTOS_DEST ='app/static/photos'      #specifies the destination to where we want to store our Images.
 
@@ -30,7 +32,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://manasseh:beast@localhost/pitch'
+    
 
     DEBUG = True
 config_options = {
