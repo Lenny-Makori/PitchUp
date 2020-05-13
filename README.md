@@ -22,6 +22,24 @@ This website enables a user to make pitches.
 * pip install Flask-Mail
 * pip install flask-uploads
 
+* Enter the app directory on your terminal and run `chmod a+x start.sh`, then run `./start.sh`.
+* Now open http://127.0.0.1:5000/ in your browser.
+## Known Bugs
+The program cannot fully post the pitches but it will be implemented in future.
+
+
+
+## Technologies Used
+This page was created using: 
+* Python3.6
+* Flask framework
+* Bootstrap and Css
+* PostgreSQL
+* SQLAlchemy
+
+## Support and contact details
+In case you encounter any  troubles in installing the application, contact me on *makorilenny28@gmail.com*.
+
 
 ### License
 *MIT license*
